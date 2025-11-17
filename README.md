@@ -17,9 +17,31 @@
    sudo apt install build-essential
    ```
 
-# 컴파일 및 실행
+# 프로젝트 구조
+- 각 연습용 프로젝트는 `프로젝트명/` 디렉터리 하나와 그 안의 `main.rs` 파일로만 구성합니다.
+- 예시:
+  ```
+  hello_world/
+  └── main.rs
+  ```
+- 빌드 결과물은 각 프로젝트 내부의 `target/` 폴더(자동으로 `.gitignore`)에 모읍니다.
+
+# rustc로 컴파일 & 실행
 ```bash
 cd hello_world
-rustc main.rs -o hello_world
-./hello_world
+mkdir -p target
+rustc main.rs -o target/hello_world   # 필요 시 -O, --edition 등 추가
+./target/hello_world
+```
+
+# Cargo를 쓰고 싶다면
+```bash
+cargo new hello_cargo
+cargo build
+./target/debug/hello_cargo
+# or
+cargo run
+
+#check
+cargo check
 ```
