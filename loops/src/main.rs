@@ -1,6 +1,7 @@
 fn main() {
     // loop
     let mut count = 0;
+    // lable starts with '
     'counting_up: loop {
         println!("count = {count}");
         let mut remaining = 10;
